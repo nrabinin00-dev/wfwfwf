@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>НЭТК - День открытых дверей 2026</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛️</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Общие стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: url("https://static.vecteezy.com/system/resources/previews/000/701/682/non_2x/pastel-blue-banner-design-vector.jpg") no-repeat center center fixed;
+            background-size: cover;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+        }
+
+        #wrapper {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Шапка */
+        #header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 90px 30px 25px 30px;
+            background: linear-gradient(135deg, #ffffff 0%, #2F4F4F 100%);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            border-radius: 0 0 10px 10px;
+            z-index: 100;
+            flex-wrap: wrap;
+        }
+
+        .top-circles {
+            display: flex;
+            gap: 15px;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 8px 20px;
+            border-radius: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            z-index: 101;
+        }
+
+        .circle-btn {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+        }
+
+        .circle-btn i {
+            font-size: 22px;
+        }
+
+        .circle-btn:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .circle-tooltip {
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .circle-btn:hover .circle-tooltip {
+            opacity: 1;
+            visibility: visible;
+            bottom: -40px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: #333;
+            line-height: 1.2;
+        }
+
+        .logo-subtitle {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.3;
+            max-width: 250px;
+        }
+
+        .header-contacts {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .header-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #333;
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .header-contact-item i {
+            color: #667eea;
+            font-size: 18px;
+        }
+
+        .header-contact-item:hover {
+            color: #667eea;
+        }
+
+        .left-text {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            color: #333;
+        }
+
+        .main-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .subtitle {
+            font-size: 18px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+            opacity: 0.95;
+        }
+
+        .event-date-badge {
+            text-align: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px;
+            border-radius: 60px;
+            margin: 20px auto 30px;
+            max-width: 500px;
+            font-size: 28px;
+            font-weight: 700;
+            box-shadow: 0 10px 30px rgba(102,126,234,0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
+        .blurred-box {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid rgba(255,255,255,0.2);
+            text-align: center;
+        }
+
+        .box-text {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .box-subtext {
+            font-size: 18px;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        .specialties-section {
+            padding: 20px 15px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin: 40px 0 30px;
+        }
+
+        .section-subtitle {
+            font-size: 16px;
+            font-weight: 500;
+            color: #667eea;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .section-description {
+            font-size: 16px;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+            padding: 0 15px;
+        }
+
+        .specialties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .specialty-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .specialty-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(102,126,234,0.2);
+            border-color: #667eea;
+        }
+
+        .specialty-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .specialty-content {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .specialty-code {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #667eea;
+            background: rgba(102,126,234,0.1);
+            padding: 4px 12px;
+            border-radius: 30px;
+            margin-bottom: 15px;
+            align-self: flex-start;
+        }
+
+        .specialty-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #333;
+            line-height: 1.4;
+            margin-bottom: 15px;
+            min-height: 60px;
+        }
+
+        .specialty-description {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .specialty-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            width: 100%;
+            border: 2px solid transparent;
+            margin-top: 10px;
+        }
+
+        .specialty-btn:hover {
+            background: linear-gradient(135deg, #764ba2, #667eea);
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(102,126,234,0.3);
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(5px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: #666;
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: #ff4444;
+        }
+
+        .modal-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 10px;
+            padding-right: 30px;
+        }
+
+        .modal-subtitle {
+            font-size: 16px;
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #f0f0f0;
+            border-radius: 12px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102,126,234,0.1);
+        }
+
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .form-submit:hover {
+            background: linear-gradient(135deg, #764ba2, #667eea);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102,126,234,0.3);
+        }
+
+        .form-message {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 14px;
+            text-align: center;
+            display: none;
+        }
+
+        .form-message.success {
+            display: block;
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .form-message.error {
+            display: block;
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .consent-group {
+            margin-top: 15px;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            border-left: 3px solid #667eea;
+        }
+
+        .consent-group input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+            accent-color: #667eea;
+        }
+
+        .consent-group label {
+            font-size: 14px;
+            color: #333;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: normal;
+        }
+
+        .consent-group small {
+            color: #888;
+            font-size: 11px;
+            line-height: 1.4;
+            display: block;
+            margin-top: 8px;
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #1a1f2e, #2a2f3f);
+            color: #fff;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .footer-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .footer-divider {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            margin: 0 auto 20px;
+            border-radius: 2px;
+        }
+
+        .help-message {
+            background: rgba(102,126,234,0.1);
+            border-radius: 20px;
+            padding: 30px;
+            border-left: 3px solid #667eea;
+            text-align: center;
+        }
+
+        .help-message p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 15px;
+        }
+
+        .help-message strong {
+            color: #667eea;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-copyright {
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+        }
+
+        @media (max-width: 992px) {
+            .specialties-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            #header {
+                flex-direction: column;
+                padding-top: 80px;
+                gap: 15px;
+            }
+            
+            .top-circles {
+                top: 15px;
+                padding: 5px 15px;
+            }
+            
+            .circle-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+            }
+            
+            .circle-btn i {
+                font-size: 20px;
+            }
+            
+            .logo-image {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .logo-title {
+                font-size: 22px;
+            }
+            
+            .logo-subtitle {
+                font-size: 14px;
+                max-width: 200px;
+            }
+            
+            .header-contacts {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                margin-top: 10px;
+            }
+            
+            .event-date-badge {
+                font-size: 22px;
+                padding: 15px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .specialties-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .box-text {
+                font-size: 20px;
+            }
+            
+            .box-subtext {
+                font-size: 16px;
+            }
+            
+            .modal-content {
+                padding: 25px;
+            }
+            
+            .modal-title {
+                font-size: 22px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 22px;
+            }
+            
+            .subtitle {
+                font-size: 16px;
+            }
+            
+            .event-date-badge {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="wrapper">
+    <div id="header">
+        <div class="top-circles">
+            <a href="https://t.me/netk1957" target="_blank" class="circle-btn">
+                <i class="fab fa-telegram-plane"></i>
+                <span class="circle-tooltip">Telegram</span>
+            </a>
+            <a href="https://vk.com/netk_arzamaz" target="_blank" class="circle-btn">
+                <i class="fab fa-vk"></i>
+                <span class="circle-tooltip">ВКонтакте</span>
+            </a>
+            <a href="https://netk.nnov.ru" target="_blank" class="circle-btn">
+                <i class="fas fa-globe"></i>
+                <span class="circle-tooltip">Наш сайт</span>
+            </a>
+        </div>
+
+        <div class="logo">
+            <img src="https://img.hhcdn.ru/employer-logo/7386449.png" alt="НЭТК" class="logo-image">
+            <div class="logo-text">
+                <span class="logo-title">НЭТК</span>
+                <span class="logo-subtitle">Нижегородский экономико‑технологический колледж</span>
+            </div>
+        </div>
+        
+        <div class="header-contacts">
+            <a href="tel:+78314271432" class="header-contact-item">
+                <i class="fas fa-phone"></i>
+                7-14-32
+            </a>
+            <a href="mailto:atpk-itc@yandex.ru" class="header-contact-item">
+                <i class="fas fa-envelope"></i>
+                atpk-itc@yandex.ru
+            </a>
+        </div>
+    </div>
+    
+    <div id="container">
+        <div id="content">
+            <div class="left-text">
+                <h1 class="main-title">[ПРИГЛАШАЕМ АБИТУРИЕНТОВ И ИХ РОДИТЕЛЕЙ]</h1>
+                <p class="subtitle">Познакомьтесь с колледжем, узнайте о специальностях и сделайте первый шаг к успешной карьере.</p>
+            </div>
+            
+            <div class="event-date-badge">
+                🗓️ 28 МАРТА 2026 · НАЧАЛО В 11:00
+            </div>
+            
+            <div class="blurred-box">
+                <p class="box-text">Нижегородский экономико‑технологический колледж (НЭТК)</p>
+                <p class="box-subtext">Более 50 лет готовим специалистов для экономики и технологий</p>
+            </div>
+            
+            <section class="specialties-section">
+                <div class="section-header">
+                    <h2 class="section-subtitle">НАШИ СПЕЦИАЛЬНОСТИ</h2>
+                    <h3 class="section-title">ВЫБЕРИ СВОЁ НАПРАВЛЕНИЕ</h3>
+                    <p class="section-description">
+                        Ознакомьтесь с нашими специальностями и нажмите кнопку "Записаться", чтобы оставить заявку на день открытых дверей.
+                    </p>
+                </div>
+                
+                <div class="specialties-grid">
+                    <!-- Специальность 1: Право -->
+                    <div class="specialty-card">
+                        <img src="https://images.pexels.com/photos/5668470/pexels-photo-5668470.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Право" class="specialty-image">
+                        <div class="specialty-content">
+                            <span class="specialty-code">40.02.01</span>
+                            <h3 class="specialty-title">Право и организация социального обеспечения</h3>
+                            <p class="specialty-description">
+                                Подготовка специалистов для работы в органах социальной защиты, юридических отделах и судебных инстанциях.
+                            </p>
+                            <button class="specialty-btn" onclick="openModal('40.02.01', 'Право и организация социального обеспечения')">
+                                <i class="fas fa-calendar-check"></i> ЗАПИСАТЬСЯ
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Специальность 2: Юриспруденция (НОВАЯ КАРТИНКА) -->
+                    <div class="specialty-card">
+                        <img src="https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Юриспруденция" class="specialty-image">
+                        <div class="specialty-content">
+                            <span class="specialty-code">40.02.04</span>
+                            <h3 class="specialty-title">Юриспруденция</h3>
+                            <p class="specialty-description">
+                                Углубленная подготовка юристов для правового сопровождения деятельности организаций и граждан.
+                            </p>
+                            <button class="specialty-btn" onclick="openModal('40.02.04', 'Юриспруденция')">
+                                <i class="fas fa-calendar-check"></i> ЗАПИСАТЬСЯ
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Специальность 3: Финансы -->
+                    <div class="specialty-card">
+                        <img src="https://images.pexels.com/photos/4386326/pexels-photo-4386326.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Финансы" class="specialty-image">
+                        <div class="specialty-content">
+                            <span class="specialty-code">38.02.06</span>
+                            <h3 class="specialty-title">Финансы</h3>
+                            <p class="specialty-description">
+                                Обучение управлению финансами, анализу деятельности, работе с банковскими продуктами.
+                            </p>
+                            <button class="specialty-btn" onclick="openModal('38.02.06', 'Финансы')">
+                                <i class="fas fa-calendar-check"></i> ЗАПИСАТЬСЯ
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Специальность 4: Экономика -->
+                    <div class="specialty-card">
+                        <img src="https://images.pexels.com/photos/6863260/pexels-photo-6863260.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Экономика" class="specialty-image">
+                        <div class="specialty-content">
+                            <span class="specialty-code">38.02.01</span>
+                            <h3 class="specialty-title">Экономика и бухгалтерский учет</h3>
+                            <p class="specialty-description">
+                                Подготовка бухгалтеров и экономистов для работы на предприятиях любых форм собственности.
+                            </p>
+                            <button class="specialty-btn" onclick="openModal('38.02.01', 'Экономика и бухгалтерский учет')">
+                                <i class="fas fa-calendar-check"></i> ЗАПИСАТЬСЯ
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Специальность 5: Коммерция -->
+                    <div class="specialty-card">
+                        <img src="https://images.pexels.com/photos/4491469/pexels-photo-4491469.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Коммерция" class="specialty-image">
+                        <div class="specialty-content">
+                            <span class="specialty-code">38.02.04</span>
+                            <h3 class="specialty-title">Коммерция</h3>
+                            <p class="specialty-description">
+                                Специалисты по организации торговли, логистике, маркетингу и управлению продажами.
+                            </p>
+                            <button class="specialty-btn" onclick="openModal('38.02.04', 'Коммерция')">
+                                <i class="fas fa-calendar-check"></i> ЗАПИСАТЬСЯ
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Специальность 6: Торговое дело -->
+                    <div class="specialty-card">
+                        <img src="https://images.pexels.com/photos/5632383/pexels-photo-5632383.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Торговое дело" class="specialty-image">
+                        <div class="specialty-content">
+                            <span class="specialty-code">38.02.08</span>
+                            <h3 class="specialty-title">Торговое дело</h3>
+                            <p class="specialty-description">
+                                Современная специальность для работы в ритейле: управление торговыми точками.
+                            </p>
+                            <button class="specialty-btn" onclick="openModal('38.02.08', 'Торговое дело')">
+                                <i class="fas fa-calendar-check"></i> ЗАПИСАТЬСЯ
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Специальность 7: Информационные системы -->
+                    <div class="specialty-card">
+                        <img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Программирование" class="specialty-image">
+                        <div class="specialty-content">
+                            <span class="specialty-code">09.02.07</span>
+                            <h3 class="specialty-title">Информационные системы и программирование</h3>
+                            <p class="specialty-description">
+                                Разработка и сопровождение информационных систем, программирование, работа с базами данных.
+                            </p>
+                            <button class="specialty-btn" onclick="openModal('09.02.07', 'Информационные системы и программирование')">
+                                <i class="fas fa-calendar-check"></i> ЗАПИСАТЬСЯ
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Специальность 8: Разработка ПО -->
+                    <div class="specialty-card">
+                        <img src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Разработка ПО" class="specialty-image">
+                        <div class="specialty-content">
+                            <span class="specialty-code">09.02.11</span>
+                            <h3 class="specialty-title">Разработка и управление ПО</h3>
+                            <p class="specialty-description">
+                                Углубленная подготовка разработчиков ПО, владеющих современными языками программирования.
+                            </p>
+                            <button class="specialty-btn" onclick="openModal('09.02.11', 'Разработка и управление программным обеспечением')">
+                                <i class="fas fa-calendar-check"></i> ЗАПИСАТЬСЯ
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Специальность 9: Интеграция с ИИ -->
+                    <div class="specialty-card">
+                        <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Искусственный интеллект" class="specialty-image">
+                        <div class="specialty-content">
+                            <span class="specialty-code">09.02.13</span>
+                            <h3 class="specialty-title">Интеграция с ИИ</h3>
+                            <p class="specialty-description">
+                                Создание систем с элементами искусственного интеллекта и машинного обучения.
+                            </p>
+                            <button class="specialty-btn" onclick="openModal('09.02.13', 'Интеграция решений с применением технологий искусственного интеллекта')">
+                                <i class="fas fa-calendar-check"></i> ЗАПИСАТЬСЯ
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Специальность 10: Туризм -->
+                    <div class="specialty-card">
+                        <img src="https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Туризм" class="specialty-image">
+                        <div class="specialty-content">
+                            <span class="specialty-code">43.02.16</span>
+                            <h3 class="specialty-title">Туризм и гостеприимство</h3>
+                            <p class="specialty-description">
+                                Подготовка специалистов для гостиничного и ресторанного бизнеса, туристических агентств.
+                            </p>
+                            <button class="specialty-btn" onclick="openModal('43.02.16', 'Туризм и гостеприимство')">
+                                <i class="fas fa-calendar-check"></i> ЗАПИСАТЬСЯ
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Специальность 11: Поварское дело -->
+                    <div class="specialty-card">
+                        <img src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Поварское дело" class="specialty-image">
+                        <div class="specialty-content">
+                            <span class="specialty-code">43.02.15</span>
+                            <h3 class="specialty-title">Поварское и кондитерское дело</h3>
+                            <p class="specialty-description">
+                                Творческая специальность для тех, кто хочет стать шеф-поваром или кондитером.
+                            </p>
+                            <button class="specialty-btn" onclick="openModal('43.02.15', 'Поварское и кондитерское дело')">
+                                <i class="fas fa-calendar-check"></i> ЗАПИСАТЬСЯ
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Модальное окно с формой -->
+            <div class="modal-overlay" id="applicationModal">
+                <div class="modal-content">
+                    <button class="modal-close" onclick="closeModal()">&times;</button>
+                    <h3 class="modal-title">Запись на день открытых дверей</h3>
+                    <div class="modal-subtitle" id="modalSpecialty">Выбранная специальность</div>
+                    
+                    <form action="https://formsubmit.co/makakijbabuin@gmail.com" method="POST">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="box">
+                        
+                        <input type="hidden" name="Код специальности" id="specialtyCode">
+                        <input type="hidden" name="Название специальности" id="specialtyName">
+                        
+                        <div class="form-group">
+                            <label>Фамилия *</label>
+                            <input type="text" name="Фамилия" required placeholder="Иванов">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Имя *</label>
+                            <input type="text" name="Имя" required placeholder="Иван">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Отчество</label>
+                            <input type="text" name="Отчество" placeholder="Иванович">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" name="Email" required placeholder="ivanov@example.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Телефон</label>
+                            <input type="tel" name="Телефон" placeholder="+7 (999) 123-45-67">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Комментарий</label>
+                            <textarea name="Комментарий" placeholder="Ваши вопросы или пожелания..."></textarea>
+                        </div>
+                        
+                        <div class="form-group consent-group">
+                            <label>
+                                <input type="checkbox" id="consent" required>
+                                <span>Я согласен на обработку персональных данных *</span>
+                            </label>
+                            <small>
+                                Нажимая кнопку "Отправить", вы даете согласие на обработку ваших персональных данных
+                            </small>
+                        </div>
+                        
+                        <button type="submit" class="form-submit" onclick="return checkConsent()">
+                            <i class="fas fa-paper-plane"></i> ОТПРАВИТЬ ЗАЯВКУ
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <footer class="footer">
+                <div class="footer-container">
+                    <div class="footer-header">
+                        <h2 class="footer-title">ГДЕ НАС НАЙТИ</h2>
+                        <div class="footer-divider"></div>
+                    </div>
+                    
+                    <div class="help-message">
+                        <p><strong>Адрес колледжа:</strong> г. Арзамас, проспект Ленина, 200</p>
+                        <p><strong>Проезд:</strong> автобусы №1, 2, 5 до остановки "Техникум"</p>
+                        <p><strong>Телефон приемной комиссии:</strong> 7-14-32</p>
+                        <p><strong>Email:</strong> atpk-itc@yandex.ru</p>
+                        <p><strong>Сайт:</strong> netk.nnov.ru</p>
+                        <p><strong>Режим работы:</strong> пн-пт с 9:00 до 18:00</p>
+                    </div>
+                    
+                    <div class="footer-bottom">
+                        <div class="footer-copyright">
+                            © 2026 Нижегородский экономико-технологический колледж
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentSpecialty = { code: '', name: '' };
+    
+    function openModal(code, name) {
+        currentSpecialty.code = code;
+        currentSpecialty.name = name;
+        
+        document.getElementById('specialtyCode').value = code;
+        document.getElementById('specialtyName').value = name;
+        document.getElementById('modalSpecialty').textContent = code + ' ' + name;
+        
+        document.getElementById('applicationModal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeModal() {
+        document.getElementById('applicationModal').classList.remove('active');
+        document.body.style.overflow = '';
+        document.getElementById('applicationForm').reset();
+    }
+    
+    function checkConsent() {
+        if (!document.getElementById('consent').checked) {
+            alert('Необходимо дать согласие на обработку персональных данных');
+            return false;
+        }
+        return true;
+    }
+    
+    document.getElementById('applicationModal').addEventListener('click', function(e) {
+        if (e.target === this) closeModal();
+    });
+    
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeModal();
+    });
+</script>
+
+</body>
+</html>
